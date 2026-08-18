@@ -1,0 +1,4 @@
+git add .gitattributes
+git add --renormalize .
+git commit -m "Fix line endings to LF"
+git push
