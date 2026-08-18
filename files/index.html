@@ -97,30 +97,30 @@ nav a:hover::after{transform:scaleX(1);}
 
 /* WHATIDO */
 .whatido{background:var(--bg);padding:8rem 2rem;}
-.carousel-row{position:relative;display:flex;align-items:center;justify-content:center;max-width:1300px;margin:0 auto 4rem;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto 4rem;}
+.service-card{padding:2.5rem 2rem;border:1px solid rgba(255,255,255,0.06);border-radius:4px;background:rgba(255,255,255,0.02);transition:.4s;position:relative;overflow:hidden;}
+.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(214,0,0,0.07) 0%,transparent 70%);opacity:0;transition:.4s;}
+.service-card:hover{border-color:rgba(214,0,0,0.25);transform:translateY(-5px);box-shadow:0 20px 50px rgba(214,0,0,0.1);}
+.service-card:hover::before{opacity:1;}
+.service-icon{width:52px;height:52px;margin-bottom:1.5rem;color:var(--red);transition:transform .4s;}
+.service-card:hover .service-icon{transform:scale(1.12);}
+.service-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:.7rem;}
+.service-desc{color:var(--grey);font-size:.86rem;line-height:1.75;}
+.service-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem;}
+.whatido-text{max-width:600px;margin:0 auto;text-align:center;}
+.whatido-text p{color:var(--light);line-height:1.8;font-size:1rem;margin-bottom:1rem;}
+/* Hands */
+.hands-row{display:flex;align-items:center;justify-content:center;max-width:1200px;margin:0 auto 3rem;gap:0;}
 .hand-wrap{flex:1;display:flex;align-items:center;opacity:0;transition:opacity .6s ease,transform .6s ease;}
 .hand-wrap.left{justify-content:flex-end;padding-right:2rem;transform:translateX(-30px);}
 .hand-wrap.right{justify-content:flex-start;padding-left:2rem;transform:translateX(30px);}
 .hand-wrap.visible{opacity:1;transform:translateX(0);}
-.hand-svg{width:110px;height:auto;filter:drop-shadow(0 0 12px rgba(214,0,0,0.25));}
+.hand-svg{width:100px;height:auto;filter:drop-shadow(0 0 12px rgba(214,0,0,0.25));}
 .hand-wrap.left .hand-svg{animation:nudgeRight 2s ease-in-out infinite;}
 .hand-wrap.right .hand-svg{animation:nudgeLeft 2s ease-in-out infinite;}
 @keyframes nudgeRight{0%,100%{transform:translateX(0);}50%{transform:translateX(10px);}}
 @keyframes nudgeLeft{0%,100%{transform:translateX(0);}50%{transform:translateX(-10px);}}
-.carousel-wrap{position:relative;width:min(900px,100%);flex-shrink:0;border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);}
-.carousel{display:flex;transition:transform .6s cubic-bezier(.77,0,.175,1);}
-.carousel-slide{min-width:100%;position:relative;background:#0a0a0a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.carousel-slide img{width:100%;height:100%;object-fit:contain;background:radial-gradient(ellipse at center,#1a0505 0%,#080808 60%,#050505 100%);padding:2rem;filter:drop-shadow(0 0 40px rgba(214,0,0,0.15));transition:transform .6s;}
-.carousel-slide:hover img{transform:scale(1.03);}
-.carousel-overlay{position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(5,5,5,0.8),transparent);pointer-events:none;}
-.carousel-nav{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;transform:translateY(-50%);padding:0 1rem;pointer-events:none;}
-.carousel-nav button{pointer-events:auto;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.1);color:var(--white);width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:none;transition:.3s;display:flex;align-items:center;justify-content:center;}
-.carousel-nav button:hover{background:var(--red);border-color:var(--red);}
-.carousel-dots{display:flex;justify-content:center;gap:.5rem;margin-top:1rem;}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--grey);transition:.3s;cursor:none;}
-.dot.active{background:var(--red);width:20px;border-radius:3px;}
-.whatido-text{max-width:600px;margin:0 auto;text-align:center;}
-.whatido-text p{color:var(--light);line-height:1.8;font-size:1rem;margin-bottom:1rem;}
+.hands-center{flex-shrink:0;}
 @media(max-width:900px){.hand-wrap{display:none;}}
 
 /* CLIENTS */
@@ -396,7 +396,8 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
     <span class="section-label" data-pt="Especialidade" data-en="Specialty">Especialidade</span>
     <h2 class="section-title" data-pt="O que faço" data-en="What I do">O que faço</h2>
   </div>
-  <div class="carousel-row" id="carouselRow">
+  <!-- Mãos + cards -->
+  <div class="hands-row" id="carouselRow">
     <div class="hand-wrap left" id="handLeft">
       <svg class="hand-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
         <path d="M30 80 Q28 60 32 45 Q34 38 40 38 Q46 38 47 45 L47 60 Q49 52 55 50 Q62 49 63 56 L63 65 Q65 58 71 57 Q78 56 79 63 L79 72 Q81 67 87 67 Q93 67 93 74 L93 95 Q93 115 75 120 L50 120 Q30 120 28 100 Z" fill="none" stroke="#d60000" stroke-width="2.5" stroke-linejoin="round"/>
@@ -405,13 +406,58 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
         <path d="M30 100 L20 105 Q16 108 18 113 L30 118" fill="none" stroke="#d60000" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </div>
-    <div class="carousel-wrap">
-      <div class="carousel" id="carousel">
-        <div class="carousel-slide"><img src="whatido1.jpg" alt="Render 1"><div class="carousel-overlay"></div></div>
-        <div class="carousel-slide"><img src="whatido2.jpg" alt="Render 2"><div class="carousel-overlay"></div></div>
-        <div class="carousel-slide"><img src="whatido3.jpg" alt="Render 3"><div class="carousel-overlay"></div></div>
+    <div class="hands-center services-grid">
+      <!-- Card 1 — Renders -->
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="10" width="34" height="26" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M38 16h6a2 2 0 012 2v14a2 2 0 01-2 2h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="21" cy="23" r="6" stroke="currentColor" stroke-width="2"/>
+          <path d="M4 30l8-7 6 6 5-4 6 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 36h26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="21" cy="23" r="2" fill="currentColor"/>
+          <path d="M44 20l3-3M44 28l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="service-title" data-pt="Renders de Produto" data-en="Product Renders">Renders de Produto</div>
+        <div class="service-desc" data-pt="Visualização 3D fotorrealista de produtos para catálogos, datasheets e campanhas. Iluminação, materiais e ambientes criados com precisão técnica no KeyShot." data-en="Photorealistic 3D product visualization for catalogs, datasheets and campaigns. Lighting, materials and environments crafted with technical precision in KeyShot.">Visualização 3D fotorrealista de produtos para catálogos, datasheets e campanhas. Iluminação, materiais e ambientes criados com precisão técnica no KeyShot.</div>
+        <div class="service-tags">
+          <span class="tag">KeyShot</span><span class="tag">3D</span><span class="tag">Lighting</span><span class="tag">Texturing</span>
+        </div>
       </div>
-      <div class="carousel-nav"><button id="prev">‹</button><button id="next">›</button></div>
+      <!-- Card 2 — Design Gráfico -->
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 38L20 14l10 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 30h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="36" cy="32" r="8" stroke="currentColor" stroke-width="2"/>
+          <path d="M36 28v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M6 8h12M6 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+          <circle cx="42" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M40 12h4M42 10v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="service-title" data-pt="Graphic Design & Motion" data-en="Graphic Design & Motion">Graphic Design & Motion</div>
+        <div class="service-desc" data-pt="Criação de conteúdos gráficos, identidades visuais e motion graphics. Animação, composição e pós-produção para vídeo com o pacote Adobe completo." data-en="Creation of graphic content, visual identities and motion graphics. Animation, compositing and post-production for video with the full Adobe suite.">Criação de conteúdos gráficos, identidades visuais e motion graphics. Animação, composição e pós-produção para vídeo com o pacote Adobe completo.</div>
+        <div class="service-tags">
+          <span class="tag">After Effects</span><span class="tag">Illustrator</span><span class="tag">Photoshop</span>
+        </div>
+      </div>
+      <!-- Card 3 — Multimédia -->
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="14" width="28" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M32 20l10-5v14l-10-5V20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M10 36v4M22 36v4M16 40h-6M16 40h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M38 13v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M42 8c1 2 1 5-1 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M46 6c2 3 2 9-2 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+        </svg>
+        <div class="service-title" data-pt="Multimédia & Imersivo" data-en="Multimedia & Immersive">Multimédia & Imersivo</div>
+        <div class="service-desc" data-pt="Edição e captação de imagem e vídeo, realidade aumentada e virtual, e produção audiovisual completa. Do conceito ao produto final." data-en="Image and video editing and capture, augmented and virtual reality, and full audiovisual production. From concept to final product.">Edição e captação de imagem e vídeo, realidade aumentada e virtual, e produção audiovisual completa. Do conceito ao produto final.</div>
+        <div class="service-tags">
+          <span class="tag">Premiere</span><span class="tag">AR/VR</span><span class="tag">Audiovisual</span>
+        </div>
+      </div>
     </div>
     <div class="hand-wrap right" id="handRight">
       <svg class="hand-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" style="transform:scaleX(-1);">
@@ -422,7 +468,6 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
       </svg>
     </div>
   </div>
-  <div class="carousel-dots" id="dots"><div class="dot active"></div><div class="dot"></div><div class="dot"></div></div>
   <div class="whatido-text">
     <p data-pt="Crio narrativas visuais através de renderização 3D, animação e design. Combino técnica e estética para comunicar ideias de forma clara e impactante." data-en="I create visual narratives through 3D rendering, animation and design. I combine technique and aesthetics to communicate ideas clearly and powerfully.">Crio narrativas visuais através de renderização 3D, animação e design. Combino técnica e estética para comunicar ideias de forma clara e impactante.</p>
     <p data-pt="Transformo produtos e marcas em experiências visuais memoráveis — do conceito à pós-produção." data-en="I transform products and brands into memorable visual experiences — from concept to post-production.">Transformo produtos e marcas em experiências visuais memoráveis — do conceito à pós-produção.</p>
@@ -430,49 +475,6 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
 </section>
 
 <!-- REEL / VÍDEOS -->
-<section class="reel-section fade-section" id="reel">
-  <div class="reel-inner">
-    <div class="section-header">
-      <span class="section-label" data-pt="Showreel & Vídeos" data-en="Showreel & Videos">Showreel & Vídeos</span>
-      <h2 class="section-title" data-pt="O meu trabalho em movimento" data-en="My work in motion">O meu trabalho em movimento</h2>
-    </div>
-    <div class="reel-videos">
-      <!-- SLOT 1 — Substitui src pelo teu ficheiro ou URL do YouTube embed -->
-      <div class="reel-video-card">
-        <div class="reel-video-placeholder">
-          <div class="play-icon">▶</div>
-          <p data-pt="Showreel 2024" data-en="Showreel 2024">Showreel 2024</p>
-          <div class="add-hint" data-pt="Adiciona o teu reel aqui" data-en="Add your reel here">Adiciona o teu reel aqui</div>
-        </div>
-        <!-- Quando tiveres o vídeo, substitui o div acima por:
-        <video controls preload="metadata" poster="reel_thumb.jpg">
-          <source src="showreel_2024.mp4" type="video/mp4">
-        </video> -->
-        <div class="reel-video-info">
-          <div>
-            <div class="reel-video-title" data-pt="Showreel 2024" data-en="Showreel 2024">Showreel 2024</div>
-            <div class="reel-video-sub">KeyShot · After Effects · Premiere</div>
-          </div>
-        </div>
-      </div>
-      <!-- SLOT 2 -->
-      <div class="reel-video-card">
-        <div class="reel-video-placeholder">
-          <div class="play-icon">▶</div>
-          <p data-pt="Animação de Produto" data-en="Product Animation">Animação de Produto</p>
-          <div class="add-hint" data-pt="Adiciona um vídeo aqui" data-en="Add a video here">Adiciona um vídeo aqui</div>
-        </div>
-        <!-- <video controls preload="metadata"><source src="product_anim.mp4"></video> -->
-        <div class="reel-video-info">
-          <div>
-            <div class="reel-video-title" data-pt="Animação de Produto" data-en="Product Animation">Animação de Produto</div>
-            <div class="reel-video-sub">KeyShot Animation · After Effects</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SKILLS -->
 <section class="skills fade-section">
@@ -503,7 +505,7 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
     </div>
     <div class="project-card" data-cat="design">
       <img src="design.jpg" alt="Design">
-      <div class="project-info"><h4 data-pt="Design Gráfico" data-en="Graphic Design">Design Gráfico</h4><span data-pt="Illustrator · Photoshop →" data-en="Illustrator · Photoshop →">Illustrator · Photoshop →</span></div>
+      <div class="project-info"><h4 data-pt="Graphic Design" data-en="Graphic Design">Graphic Design</h4><span data-pt="Illustrator · Photoshop →" data-en="Illustrator · Photoshop →">Illustrator · Photoshop →</span></div>
     </div>
     <div class="project-card" data-cat="multimedia">
       <img src="multimedia.jpg" alt="Multimedia">
@@ -520,18 +522,6 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
 </section>
 
 <!-- TESTEMUNHO -->
-<section class="testimonial fade-section">
-  <div class="testimonial-inner">
-    <div class="section-label" data-pt="O que dizem" data-en="What they say">O que dizem</div>
-    <div class="testimonial-quote" data-pt="Adiciona aqui uma citação de um colega ou responsável da Bosch ou Keenfinity — uma frase genuína vale ouro num portfólio." data-en="Add a quote here from a colleague or manager at Bosch or Keenfinity — a genuine testimonial is worth its weight in gold on a portfolio.">
-      Adiciona aqui uma citação de um colega ou responsável da Bosch ou Keenfinity — uma frase genuína vale ouro num portfólio.
-    </div>
-    <div class="testimonial-author">
-      <div class="testimonial-name">— Nome, Cargo</div>
-      <div class="testimonial-role">Bosch / Keenfinity</div>
-    </div>
-  </div>
-</section>
 
 <!-- SOBRE MIM -->
 <section id="about" class="about fade-section">
@@ -546,8 +536,8 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
       <p data-pt="Sou um artista 3D e Motion Designer com 3 anos de experiência a criar visuais de produto para marcas como a Bosch. Especializado em KeyShot e na suite Adobe, transformo produtos em experiências visuais memoráveis." data-en="I'm a 3D Artist and Motion Designer with 3 years of experience creating product visuals for brands like Bosch. Specialized in KeyShot and the Adobe suite, I transform products into memorable visual experiences.">Sou um artista 3D e Motion Designer com 3 anos de experiência a criar visuais de produto para marcas como a Bosch. Especializado em KeyShot e na suite Adobe, transformo produtos em experiências visuais memoráveis.</p>
       <p data-pt="Apaixonado por desporto, teatro e criatividade — acredito que a melhor comunicação visual conta sempre uma história." data-en="Passionate about sport, theatre and creativity — I believe the best visual communication always tells a story.">Apaixonado por desporto, teatro e criatividade — acredito que a melhor comunicação visual conta sempre uma história.</p>
       <div class="contact-list">
-        <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:pedro@example.com">pedro@example.com</a></div>
-        <div class="contact-item"><span class="contact-label">LinkedIn</span><a href="#" target="_blank">linkedin.com/in/pedrofonseca</a></div>
+        <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:pedro.fonseca.multimedia@gmail.com">pedro.fonseca.multimedia@gmail.com</a></div>
+        <div class="contact-item"><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/pedrofofonseca/" target="_blank">linkedin.com/in/pedrofofonseca</a></div>
         <div class="contact-item"><span class="contact-label">ArtStation</span><a href="https://pedrofonseca9.artstation.com/" target="_blank">pedrofonseca9.artstation.com</a></div>
       </div>
     </div>
@@ -581,7 +571,7 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
         <textarea class="form-textarea" id="fmessage" placeholder="Conta-me o teu projeto..."></textarea>
       </div>
       <button class="form-submit" id="formSubmit" data-pt="Enviar mensagem →" data-en="Send message →">Enviar mensagem →</button>
-      <div class="form-note" data-pt="Ou envia diretamente para pedro@example.com" data-en="Or send directly to pedro@example.com">Ou envia diretamente para <a href="mailto:pedro@example.com" style="color:var(--red);text-decoration:none;">pedro@example.com</a></div>
+      <div class="form-note" data-pt="Ou envia diretamente para pedro.fonseca.multimedia@gmail.com" data-en="Or send directly to pedro.fonseca.multimedia@gmail.com">Ou envia diretamente para <a href="mailto:pedro.fonseca.multimedia@gmail.com" style="color:var(--red);text-decoration:none;">pedro.fonseca.multimedia@gmail.com</a></div>
     </div>
   </div>
 </section>
@@ -590,8 +580,8 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
   <div class="footer-inner">
     <span>© 2026 Pedro Fonseca</span>
     <a href="https://pedrofonseca9.artstation.com/" target="_blank">ArtStation</a>
-    <a href="#" target="_blank">LinkedIn</a>
-    <a href="mailto:pedro@example.com">Email</a>
+    <a href="https://www.linkedin.com/in/pedrofofonseca/" target="_blank">LinkedIn</a>
+    <a href="mailto:pedro.fonseca.multimedia@gmail.com">Email</a>
     <span data-pt="Porto, Portugal" data-en="Porto, Portugal">Porto, Portugal</span>
   </div>
 </footer>
@@ -732,7 +722,7 @@ document.getElementById('formSubmit').addEventListener('click', () => {
   const message = document.getElementById('fmessage').value.trim();
   if (!name || !email || !message) { alert(lang === 'pt' ? 'Por favor preenche o nome, email e mensagem.' : 'Please fill in name, email and message.'); return; }
   // Abre o cliente de email com os dados preenchidos
-  const mailto = `mailto:pedro@example.com?subject=${encodeURIComponent(subject || 'Contacto via portfólio')}&body=${encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`)}`;
+  const mailto = `mailto:pedro.fonseca.multimedia@gmail.com?subject=${encodeURIComponent(subject || 'Contacto via portfólio')}&body=${encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`)}`;
   window.location.href = mailto;
 });
 
@@ -924,16 +914,6 @@ function draw() {
   requestAnimationFrame(draw);
 }
 draw();
-
-/* ===== CAROUSEL ===== */
-const carouselEl = document.getElementById('carousel');
-const dotsEl = document.querySelectorAll('.dot');
-let idx = 0; const total = carouselEl.children.length;
-function goTo(i) { idx=(i+total)%total; carouselEl.style.transform=`translateX(${-idx*100}%)`; dotsEl.forEach((d,n)=>d.classList.toggle('active',n===idx)); }
-document.getElementById('next').onclick = () => goTo(idx+1);
-document.getElementById('prev').onclick = () => goTo(idx-1);
-dotsEl.forEach((d,i) => d.addEventListener('click',()=>goTo(i)));
-setInterval(() => goTo(idx+1), 4000);
 
 /* ===== SCROLL ANIMATIONS ===== */
 const observer = new IntersectionObserver(entries => {
