@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Pedro Fonseca | 3D Artist & Motion Designer</title>
-<meta name="description" content="Pedro Fonseca — 3D Artist & Motion Designer baseado no Porto. Especialista em KeyShot, renders de produto e motion graphics para marcas como Bosch e Keenfinity.">
-<meta property="og:title" content="Pedro Fonseca | 3D Artist & Motion Designer">
+<title>Pedro Fonseca | Renders & Animation Specialist</title>
+<meta name="description" content="Pedro Fonseca — Renders & Animation Specialist baseado no Porto. Especialista em KeyShot, renders de produto e motion graphics para marcas como Bosch e Keenfinity.">
+<meta property="og:title" content="Pedro Fonseca | Renders & Animation Specialist">
 <meta property="og:description" content="Renders de produto, motion graphics e design visual. Porto, Portugal.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -164,6 +164,22 @@ nav a:hover::after{transform:scaleX(1);}
 .project-placeholder .icon{font-size:2.5rem;opacity:.3;}
 .project-placeholder p{color:var(--grey);font-size:.85rem;line-height:1.5;}
 .project-placeholder .coming{color:var(--red);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;}
+.project-feature{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;padding:2rem;text-align:center;width:100%;height:100%;background:radial-gradient(ellipse at center,#150505 0%,#080808 75%);}
+.project-feature .icon{font-size:2.6rem;filter:drop-shadow(0 0 14px rgba(214,0,0,0.5));}
+.project-feature h4{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--white);letter-spacing:.02em;}
+.project-feature p{color:var(--grey);font-size:.78rem;line-height:1.5;max-width:220px;}
+.project-feature .tag-line{color:var(--red);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;}
+
+/* CATEGORY CARDS — pastas de projetos */
+.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.category-card{position:relative;border-radius:6px;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(160deg,rgba(214,0,0,.05),rgba(255,255,255,.015));padding:2.2rem 1.6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;text-align:center;min-height:230px;cursor:none;transition:transform .35s,box-shadow .35s,border-color .35s,background .35s;}
+.category-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(214,0,0,0.18);border-color:rgba(214,0,0,0.4);background:linear-gradient(160deg,rgba(214,0,0,.1),rgba(255,255,255,.02));}
+.category-card .cat-icon{font-size:2rem;filter:drop-shadow(0 0 14px rgba(214,0,0,0.4));opacity:.85;}
+.category-card h4{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;color:var(--white);letter-spacing:.01em;}
+.category-card .cat-count{color:var(--red);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;}
+.category-card .cat-cta{color:var(--grey);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:0;transform:translateY(4px);transition:.3s;}
+.category-card:hover .cat-cta{opacity:1;transform:translateY(0);color:var(--red);}
+.category-card .cat-add-hint{position:absolute;top:.8rem;right:.9rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);border:1px dashed rgba(255,255,255,.15);padding:.2rem .5rem;border-radius:2px;}
 
 /* TESTIMONIAL */
 .testimonial{padding:6rem 2rem;background:var(--bg);border-top:1px solid rgba(255,255,255,0.04);text-align:center;}
@@ -188,6 +204,30 @@ nav a:hover::after{transform:scaleX(1);}
 .contact-item a{color:var(--light);text-decoration:none;transition:.3s;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1px;}
 .contact-item a:hover{color:var(--red);border-color:var(--red);}
 .contact-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);min-width:70px;}
+
+/* CV — TIMELINE CRIATIVA (estilo linha do tempo de edição de vídeo) */
+.cv{background:var(--bg2);padding:8rem 2rem;border-top:1px solid rgba(255,255,255,0.04);}
+.cv-inner{max-width:1000px;margin:0 auto;}
+.cv-top{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;}
+.cv-top .section-header{text-align:left;margin-bottom:0;}
+.cv-download{display:inline-flex;align-items:center;gap:.7rem;background:var(--red);color:var(--white);text-decoration:none;padding:.9rem 1.9rem;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.05em;border-radius:2px;transition:.3s;white-space:nowrap;}
+.cv-download:hover{background:#ff0000;transform:translateY(-2px);}
+.cv-download svg{width:15px;height:15px;flex-shrink:0;}
+
+.cv-timeline{display:flex;flex-direction:column;gap:2.2rem;}
+.cv-group-label{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);font-family:'Syne',sans-serif;font-weight:700;margin-bottom:.9rem;}
+.cv-entry{position:relative;padding-left:1.4rem;border-left:1px solid rgba(255,255,255,.1);padding-bottom:1.1rem;}
+.cv-entry:last-child{padding-bottom:0;}
+.cv-entry::before{content:'';position:absolute;left:-4.5px;top:.3rem;width:8px;height:8px;border-radius:50%;background:var(--bg);border:1.5px solid var(--red);}
+.cv-entry-role{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;color:var(--white);margin-bottom:.15rem;}
+.cv-entry-co{font-size:.78rem;color:var(--light);margin-bottom:.15rem;}
+.cv-entry-time{font-size:.7rem;color:var(--grey);letter-spacing:.03em;}
+.cv-live-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--red);margin-right:.35rem;animation:pulse 1.4s infinite;}
+.cv-entry-simple{font-size:.78rem;color:var(--grey);padding-left:1.4rem;}
+
+@media(max-width:768px){
+  .cv-top{flex-direction:column;align-items:flex-start;}
+}
 
 /* CONTACT FORM */
 .contact-section{padding:8rem 2rem;background:var(--bg);border-top:1px solid rgba(255,255,255,0.04);}
@@ -227,6 +267,7 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
 .proj-list-card{position:relative;border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:none;transition:transform .3s,box-shadow .3s,border-color .3s;}
 .proj-list-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(214,0,0,0.18);border-color:rgba(214,0,0,0.25);}
 .proj-list-thumb{width:100%;aspect-ratio:16/9;object-fit:contain;background:radial-gradient(ellipse at center,#120505 0%,#080808 70%);padding:1.2rem;filter:drop-shadow(0 0 20px rgba(214,0,0,0.08));transition:transform .4s;display:block;}
+.proj-list-thumb-icon{display:flex;align-items:center;justify-content:center;font-size:2.6rem;filter:drop-shadow(0 0 20px rgba(214,0,0,0.35));}
 .proj-list-card:hover .proj-list-thumb{transform:scale(1.04);}
 .proj-list-info{padding:1.2rem 1.4rem 1.4rem;}
 .proj-list-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.35rem;}
@@ -239,6 +280,7 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
 .proj-detail.show{display:block;}
 .proj-detail-hero{width:100%;max-width:900px;margin:0 auto 2.5rem;border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);}
 .proj-detail-hero img{width:100%;display:block;object-fit:contain;background:radial-gradient(ellipse at center,#120505 0%,#080808 70%);padding:2rem;}
+.proj-detail-hero-icon{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:4.5rem;background:radial-gradient(ellipse at center,#150505 0%,#080808 75%);filter:drop-shadow(0 0 24px rgba(214,0,0,0.4));}
 .proj-detail-info{max-width:900px;margin:0 auto 2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;}
 .proj-detail-desc{color:var(--light);line-height:1.8;font-size:.95rem;}
 .proj-detail-meta{display:flex;flex-direction:column;gap:.8rem;min-width:170px;}
@@ -300,6 +342,7 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
     <a href="#whatido" data-pt="O que faço" data-en="What I do">O que faço</a>
     <a href="#projects" data-pt="Trabalhos" data-en="Work">Trabalhos</a>
     <a href="#about" data-pt="Sobre mim" data-en="About">Sobre mim</a>
+    <a href="#cv" data-pt="CV" data-en="CV">CV</a>
     <a href="#contact" data-pt="Contacto" data-en="Contact">Contacto</a>
     <button class="lang-toggle" id="langToggle">EN</button>
   </nav>
@@ -313,8 +356,8 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
   <div class="hero-content">
     <div class="hero-label" data-pt="Porto, Portugal · Disponível para trabalho" data-en="Porto, Portugal · Available for work">Porto, Portugal · Disponível para trabalho</div>
     <h1 class="hero-name">Pedro<br>Fonseca</h1>
-    <div class="hero-title" data-pt="3D Artist & Motion Designer" data-en="3D Artist & Motion Designer">3D Artist & Motion Designer</div>
-    <p class="hero-desc" data-pt="Transformo produtos e marcas em experiências visuais memoráveis — da renderização 3D ao motion design e pós-produção." data-en="I transform products and brands into memorable visual experiences — from 3D rendering to motion design and post-production.">Transformo produtos e marcas em experiências visuais memoráveis — da renderização 3D ao motion design e pós-produção.</p>
+    <div class="hero-title" data-pt="Multimedia Artist" data-en="Multimedia Artist">Multimedia Artist</div>
+    <p class="hero-desc" data-pt="Graphic Design · 3D Renderer · Video Capture and Editor · Game Developer" data-en="Graphic Design · 3D Renderer · Video Capture and Editor · Game Developer">Graphic Design · 3D Renderer · Video Capture and Editor · Game Developer</p>
     <div class="hero-btns">
       <a href="#projects" class="hero-cta" data-pt="Ver os meus trabalhos →" data-en="See my work →">Ver os meus trabalhos →</a>
       <a href="#contact" class="hero-cta-outline" data-pt="Fala comigo" data-en="Get in touch">Fala comigo</a>
@@ -328,7 +371,7 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
 <section class="stats fade-section">
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-number"><span class="count" data-target="3">0</span><span class="stat-plus">+</span></div>
+      <div class="stat-number"><span class="count" data-target="4">0</span><span class="stat-plus">+</span></div>
       <div class="stat-label" data-pt="Anos de experiência" data-en="Years of experience">Anos de experiência</div>
     </div>
     <div class="stat-item">
@@ -350,7 +393,6 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
 <section class="clients fade-section">
   <div class="section-header">
     <span class="section-label" data-pt="Com quem trabalhei" data-en="Worked with">Com quem trabalhei</span>
-    <h2 class="section-title" data-pt="Clientes & Marcas" data-en="Clients & Brands">Clientes & Marcas</h2>
   </div>
   <div class="clients-row">
     <!-- BOSCH -->
@@ -387,6 +429,13 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
         </div>
       </div>
     </div>
+
+    <div class="client-divider"></div>
+
+    <!-- INDOOR.PT -->
+    <div class="client-item">
+      <div class="client-logo">INDOOR.PT</div>
+    </div>
   </div>
 </section>
 
@@ -396,16 +445,8 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
     <span class="section-label" data-pt="Especialidade" data-en="Specialty">Especialidade</span>
     <h2 class="section-title" data-pt="O que faço" data-en="What I do">O que faço</h2>
   </div>
-  <!-- Mãos + cards -->
+  <!-- Cards -->
   <div class="hands-row" id="carouselRow">
-    <div class="hand-wrap left" id="handLeft">
-      <svg class="hand-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30 80 Q28 60 32 45 Q34 38 40 38 Q46 38 47 45 L47 60 Q49 52 55 50 Q62 49 63 56 L63 65 Q65 58 71 57 Q78 56 79 63 L79 72 Q81 67 87 67 Q93 67 93 74 L93 95 Q93 115 75 120 L50 120 Q30 120 28 100 Z" fill="none" stroke="#d60000" stroke-width="2.5" stroke-linejoin="round"/>
-        <path d="M93 78 L112 78" stroke="#d60000" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M108 73 L114 78 L108 83" fill="none" stroke="#d60000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M30 100 L20 105 Q16 108 18 113 L30 118" fill="none" stroke="#d60000" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
     <div class="hands-center services-grid">
       <!-- Card 1 — Renders -->
       <div class="service-card">
@@ -435,7 +476,7 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
           <circle cx="42" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
           <path d="M40 12h4M42 10v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <div class="service-title" data-pt="Graphic Design & Motion" data-en="Graphic Design & Motion">Graphic Design & Motion</div>
+        <div class="service-title" data-pt="Design Gráfico & Motion" data-en="Graphic Design & Motion">Design Gráfico & Motion</div>
         <div class="service-desc" data-pt="Criação de conteúdos gráficos, identidades visuais e motion graphics. Animação, composição e pós-produção para vídeo com o pacote Adobe completo." data-en="Creation of graphic content, visual identities and motion graphics. Animation, compositing and post-production for video with the full Adobe suite.">Criação de conteúdos gráficos, identidades visuais e motion graphics. Animação, composição e pós-produção para vídeo com o pacote Adobe completo.</div>
         <div class="service-tags">
           <span class="tag">After Effects</span><span class="tag">Illustrator</span><span class="tag">Photoshop</span>
@@ -459,22 +500,8 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
         </div>
       </div>
     </div>
-    <div class="hand-wrap right" id="handRight">
-      <svg class="hand-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" style="transform:scaleX(-1);">
-        <path d="M30 80 Q28 60 32 45 Q34 38 40 38 Q46 38 47 45 L47 60 Q49 52 55 50 Q62 49 63 56 L63 65 Q65 58 71 57 Q78 56 79 63 L79 72 Q81 67 87 67 Q93 67 93 74 L93 95 Q93 115 75 120 L50 120 Q30 120 28 100 Z" fill="none" stroke="#d60000" stroke-width="2.5" stroke-linejoin="round"/>
-        <path d="M93 78 L112 78" stroke="#d60000" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M108 73 L114 78 L108 83" fill="none" stroke="#d60000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M30 100 L20 105 Q16 108 18 113 L30 118" fill="none" stroke="#d60000" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-  </div>
-  <div class="whatido-text">
-    <p data-pt="Crio narrativas visuais através de renderização 3D, animação e design. Combino técnica e estética para comunicar ideias de forma clara e impactante." data-en="I create visual narratives through 3D rendering, animation and design. I combine technique and aesthetics to communicate ideas clearly and powerfully.">Crio narrativas visuais através de renderização 3D, animação e design. Combino técnica e estética para comunicar ideias de forma clara e impactante.</p>
-    <p data-pt="Transformo produtos e marcas em experiências visuais memoráveis — do conceito à pós-produção." data-en="I transform products and brands into memorable visual experiences — from concept to post-production.">Transformo produtos e marcas em experiências visuais memoráveis — do conceito à pós-produção.</p>
   </div>
 </section>
-
-<!-- REEL / VÍDEOS -->
 
 <!-- SKILLS -->
 <section class="skills fade-section">
@@ -484,11 +511,11 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
   </div>
   <div class="skills-grid">
     <div class="skill-item"><div class="skill-name">KeyShot <span>Render</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
-    <div class="skill-item"><div class="skill-name">After Effects <span>Motion</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
-    <div class="skill-item"><div class="skill-name">Photoshop <span>Design</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
-    <div class="skill-item"><div class="skill-name">Illustrator <span>Design</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
-    <div class="skill-item"><div class="skill-name">Premiere Pro <span>Vídeo</span></div><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+    <div class="skill-item"><div class="skill-name">Adobe Suite <span data-pt="Design & Vídeo" data-en="Design & Video">Design & Vídeo</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
     <div class="skill-item"><div class="skill-name">Blender <span>3D</span></div><div class="skill-bar"><div class="skill-fill" data-width="60"></div></div></div>
+    <div class="skill-item"><div class="skill-name"><span data-pt="Captação de Vídeo" data-en="Video Capture">Captação de Vídeo</span> <span>Captação</span></div><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+    <div class="skill-item"><div class="skill-name"><span data-pt="Edição de Vídeo" data-en="Video Editing">Edição de Vídeo</span> <span>Vídeo</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+    <div class="skill-item"><div class="skill-name">Unity <span>3D</span></div><div class="skill-bar"><div class="skill-fill" data-width="55"></div></div></div>
   </div>
 </section>
 
@@ -498,30 +525,37 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
     <span class="section-label">Portfolio</span>
     <h2 class="section-title" data-pt="Os meus trabalhos" data-en="My work">Os meus trabalhos</h2>
   </div>
-  <div class="project-grid">
-    <div class="project-card" data-cat="renders">
-      <img src="s4k_main.png" alt="Product Renders">
-      <div class="project-info"><h4>Product Renders</h4><span data-pt="KeyShot · Ver galeria →" data-en="KeyShot · View gallery →">KeyShot · Ver galeria →</span></div>
+  <div class="category-grid">
+    <div class="category-card" data-cat="renders">
+      <div class="cat-add-hint" data-pt="+ adicionar" data-en="+ add">+ adicionar</div>
+      <div class="cat-icon">🎨</div>
+      <h4 data-pt="Rendering Projects" data-en="Rendering Projects">Rendering Projects</h4>
+      <div class="cat-count" data-cat-count="renders"></div>
+      <div class="cat-cta" data-pt="Ver projetos →" data-en="View projects →">Ver projetos →</div>
     </div>
-    <div class="project-card" data-cat="design">
-      <img src="design.jpg" alt="Design">
-      <div class="project-info"><h4 data-pt="Graphic Design" data-en="Graphic Design">Graphic Design</h4><span data-pt="Illustrator · Photoshop →" data-en="Illustrator · Photoshop →">Illustrator · Photoshop →</span></div>
+    <div class="category-card" data-cat="design">
+      <div class="cat-add-hint" data-pt="+ adicionar" data-en="+ add">+ adicionar</div>
+      <div class="cat-icon">✏️</div>
+      <h4 data-pt="Graphic Design" data-en="Graphic Design">Graphic Design</h4>
+      <div class="cat-count" data-cat-count="design"></div>
+      <div class="cat-cta" data-pt="Ver projetos →" data-en="View projects →">Ver projetos →</div>
     </div>
-    <div class="project-card" data-cat="multimedia">
-      <img src="multimedia.jpg" alt="Multimedia">
-      <div class="project-info"><h4>Multimedia Project</h4><span>Motion · Video · 3D →</span></div>
+    <div class="category-card" data-cat="multimedia">
+      <div class="cat-add-hint" data-pt="+ adicionar" data-en="+ add">+ adicionar</div>
+      <div class="cat-icon">🎬</div>
+      <h4 data-pt="Multimedia" data-en="Multimedia">Multimedia</h4>
+      <div class="cat-count" data-cat-count="multimedia"></div>
+      <div class="cat-cta" data-pt="Ver projetos →" data-en="View projects →">Ver projetos →</div>
     </div>
-    <div class="project-card" data-cat="sports">
-      <div class="project-placeholder">
-        <div class="icon">⚡</div>
-        <p data-pt="Projeto desportivo em desenvolvimento" data-en="Sports project in development">Projeto desportivo em desenvolvimento</p>
-        <div class="coming" data-pt="Em breve" data-en="Coming soon">Em breve</div>
-      </div>
+    <div class="category-card" data-cat="game">
+      <div class="cat-add-hint" data-pt="+ adicionar" data-en="+ add">+ adicionar</div>
+      <div class="cat-icon">🕹️</div>
+      <h4 data-pt="Game Development" data-en="Game Development">Game Development</h4>
+      <div class="cat-count" data-cat-count="game"></div>
+      <div class="cat-cta" data-pt="Ver projetos →" data-en="View projects →">Ver projetos →</div>
     </div>
   </div>
 </section>
-
-<!-- TESTEMUNHO -->
 
 <!-- SOBRE MIM -->
 <section id="about" class="about fade-section">
@@ -533,12 +567,62 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
     <div class="about-content">
       <span class="section-label" data-pt="Sobre mim" data-en="About me">Sobre mim</span>
       <h3>Pedro Fonseca</h3>
-      <p data-pt="Sou um artista 3D e Motion Designer com 3 anos de experiência a criar visuais de produto para marcas como a Bosch. Especializado em KeyShot e na suite Adobe, transformo produtos em experiências visuais memoráveis." data-en="I'm a 3D Artist and Motion Designer with 3 years of experience creating product visuals for brands like Bosch. Specialized in KeyShot and the Adobe suite, I transform products into memorable visual experiences.">Sou um artista 3D e Motion Designer com 3 anos de experiência a criar visuais de produto para marcas como a Bosch. Especializado em KeyShot e na suite Adobe, transformo produtos em experiências visuais memoráveis.</p>
-      <p data-pt="Apaixonado por desporto, teatro e criatividade — acredito que a melhor comunicação visual conta sempre uma história." data-en="Passionate about sport, theatre and creativity — I believe the best visual communication always tells a story.">Apaixonado por desporto, teatro e criatividade — acredito que a melhor comunicação visual conta sempre uma história.</p>
+      <p data-pt="Render Specialist com mais de 4 anos de experiência em Visualização 3D, Renderização e Workflows Criativos com IA. Apaixonado por Desenvolvimento de Jogos, Voice Acting e Motion Capture." data-en="Render Specialist with 4+ years of experience in 3D Visualization, Rendering, and AI-powered Creative Workflows. Passionate about Game Development, Voice Acting, and Motion Capture.">Render Specialist com mais de 4 anos de experiência em Visualização 3D, Renderização e Workflows Criativos com IA. Apaixonado por Desenvolvimento de Jogos, Voice Acting e Motion Capture.</p>
       <div class="contact-list">
         <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:pedro.fonseca.multimedia@gmail.com">pedro.fonseca.multimedia@gmail.com</a></div>
         <div class="contact-item"><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/pedrofofonseca/" target="_blank">linkedin.com/in/pedrofofonseca</a></div>
         <div class="contact-item"><span class="contact-label">ArtStation</span><a href="https://pedrofonseca9.artstation.com/" target="_blank">pedrofonseca9.artstation.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV — TIMELINE -->
+<section id="cv" class="cv fade-section">
+  <div class="cv-inner">
+    <div class="cv-top">
+      <div class="section-header">
+        <span class="section-label" data-pt="Currículo" data-en="Résumé">Currículo</span>
+        <h2 class="section-title" data-pt="A minha timeline" data-en="My timeline">A minha timeline</h2>
+      </div>
+      <a class="cv-download" href="Pedro_Fonseca_CV.pdf" download data-pt="Descarregar CV (PDF) ↓" data-en="Download CV (PDF) ↓">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-pt="Descarregar CV (PDF) ↓" data-en="Download CV (PDF) ↓">Descarregar CV (PDF) ↓</span>
+      </a>
+    </div>
+
+    <div class="cv-timeline">
+      <div>
+        <div class="cv-group-label" data-pt="Experiência" data-en="Experience">Experiência</div>
+        <div class="cv-entry">
+          <div class="cv-entry-role" data-pt="Junior Render Specialist" data-en="Junior Render Specialist">Junior Render Specialist</div>
+          <div class="cv-entry-co">Bosch — Electro-Voice · Dynacord</div>
+          <div class="cv-entry-time">Mar 2023 — Mai 2025</div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-role" data-pt="Renders & Animation Specialist" data-en="Renders & Animation Specialist">Renders & Animation Specialist</div>
+          <div class="cv-entry-co">Keenfinity — Bosch · EV · Dynacord · IQSight · Radionix</div>
+          <div class="cv-entry-time"><span class="cv-live-dot"></span><span data-pt="Mai 2025 — Presente" data-en="May 2025 — Present">Mai 2025 — Presente</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="cv-group-label" data-pt="Formação" data-en="Education">Formação</div>
+        <div class="cv-entry">
+          <div class="cv-entry-role" data-pt="Curso Profissional, Multimédia" data-en="Vocational Course, Multimedia">Curso Profissional, Multimédia</div>
+          <div class="cv-entry-co">Esc. Dr. Manuel Laranjeira</div>
+          <div class="cv-entry-time">2015 — 2018</div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-role" data-pt="Licenciatura, Multimédia" data-en="Degree, Multimedia">Licenciatura, Multimédia</div>
+          <div class="cv-entry-co">Instituto Politécnico do Porto</div>
+          <div class="cv-entry-time">Set 2019 — Jul 2022</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="cv-group-label" data-pt="Certificação" data-en="Certification">Certificação</div>
+        <div class="cv-entry-simple" data-pt="Cambridge English Entry Level Certificate in ESOL International (Preliminary) — nível B1 · Jun 2015" data-en="Cambridge English Entry Level Certificate in ESOL International (Preliminary) — B1 level · Jun 2015">Cambridge English Entry Level Certificate in ESOL International (Preliminary) — nível B1 · Jun 2015</div>
       </div>
     </div>
   </div>
@@ -620,8 +704,8 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
    ============================================================ */
 const CATEGORIES = {
   renders:{
-    title:'Product Renders', sub:'KeyShot · 3D Visualization',
-    titleEn:'Product Renders', subEn:'KeyShot · 3D Visualization',
+    title:'Rendering Projects', sub:'KeyShot · 3D Visualization',
+    titleEn:'Rendering Projects', subEn:'KeyShot · 3D Visualization',
     projects:[
       { thumb:'s4k_main.png',
         name:'Solution 4K — Access & Intrusion', nameEn:'Solution 4K — Access & Intrusion',
@@ -658,7 +742,7 @@ const CATEGORIES = {
     ]
   },
   design:{
-    title:'Design Gráfico', sub:'Illustrator · Photoshop',
+    title:'Graphic Design', sub:'Illustrator · Photoshop',
     titleEn:'Graphic Design', subEn:'Illustrator · Photoshop',
     projects:[
       { thumb:'design.jpg', name:'Identidade Visual', nameEn:'Visual Identity',
@@ -672,8 +756,8 @@ const CATEGORIES = {
     ]
   },
   multimedia:{
-    title:'Multimedia Project', sub:'Motion · Video · 3D',
-    titleEn:'Multimedia Project', subEn:'Motion · Video · 3D',
+    title:'Multimedia', sub:'Motion · Video · 3D',
+    titleEn:'Multimedia', subEn:'Motion · Video · 3D',
     projects:[
       { thumb:'multimedia.jpg', name:'Projeto Multimédia — Realidade Aumentada', nameEn:'Multimedia Project — Augmented Reality',
         desc:'Projeto interativo com realidade aumentada, motion graphics e vídeo. Desenvolvido como projeto de destaque académico.',
@@ -687,21 +771,50 @@ const CATEGORIES = {
       },
     ]
   },
-  sports:{
-    title:'Sports & Motion', sub:'Em desenvolvimento',
-    titleEn:'Sports & Motion', subEn:'Coming soon',
-    projects:[]
+  game:{
+    title:'Game Development', sub:'Unity · Game Design',
+    titleEn:'Game Development', subEn:'Unity · Game Design',
+    projects:[
+      { thumb:'', name:'Smells Like Murder', nameEn:'Smells Like Murder',
+        desc:'Jogo online de terror/suspense desenvolvido como projeto final do Curso de Multimédia na ESMAD (Escola Superior de Media Artes e Design, Instituto Politécnico do Porto). Trabalho em equipa (com Francisco Pinto) que incluiu desenvolvimento em Unity, modelação e arte 3D, e design de jogo, desde o conceito até uma demo jogável.',
+        descEn:'Online horror/suspense game developed as the final project of the Multimedia Course at ESMAD (Escola Superior de Media Artes e Design, Polytechnic Institute of Porto). A team project (with Francisco Pinto) covering Unity development, 3D modeling and art, and game design, from concept to a playable demo.',
+        tags:['Unity','Game Design','3D Art','C#'], year:'2022', client:'ESMAD — Projeto Final de Curso',
+        link:'https://linktr.ee/smellslikemurder',
+        linkLabel:'Ver todas as ligações do projeto →',
+        linkLabelEn:'View all project links →',
+        images:[],
+        videos:[]
+      },
+    ]
   }
 };
 
 /* ===== LANG ===== */
 let lang = 'pt';
+
+/* ===== CATEGORY COUNTS ===== */
+function updateCategoryCounts() {
+  document.querySelectorAll('[data-cat-count]').forEach(el => {
+    const key = el.dataset.catCount;
+    const n = (CATEGORIES[key] && CATEGORIES[key].projects.length) || 0;
+    if (n === 0) {
+      el.textContent = lang === 'en' ? 'Coming soon' : 'Em breve';
+    } else if (n === 1) {
+      el.textContent = lang === 'en' ? '1 project' : '1 projeto';
+    } else {
+      el.textContent = (lang === 'en' ? n + ' projects' : n + ' projetos');
+    }
+  });
+}
+updateCategoryCounts();
+
 document.getElementById('langToggle').addEventListener('click', () => {
   lang = lang === 'pt' ? 'en' : 'pt';
   document.getElementById('langToggle').textContent = lang === 'pt' ? 'EN' : 'PT';
   document.querySelectorAll('[data-pt]').forEach(el => {
     el.textContent = el.dataset[lang] || el.textContent;
   });
+  updateCategoryCounts();
 });
 
 /* ===== CURSOR ===== */
@@ -748,20 +861,6 @@ const statsObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 statsObserver.observe(document.querySelector('.stats'));
 
-/* ===== HANDS ===== */
-const handObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      setTimeout(() => document.getElementById('handLeft').classList.add('visible'), 100);
-      setTimeout(() => document.getElementById('handRight').classList.add('visible'), 300);
-    } else {
-      document.getElementById('handLeft').classList.remove('visible');
-      document.getElementById('handRight').classList.remove('visible');
-    }
-  });
-}, { threshold: 0.3 });
-handObserver.observe(document.getElementById('carouselRow'));
-
 /* ===== MODAL ===== */
 const modal = document.getElementById('modal');
 const modalBack = document.getElementById('modalBack');
@@ -798,8 +897,11 @@ function showList() {
     card.className = 'proj-list-card';
     const name = lang === 'en' ? (proj.nameEn || proj.name) : proj.name;
     const desc = lang === 'en' ? (proj.descEn || proj.desc) : proj.desc;
+    const thumbHtml = proj.thumb
+      ? `<img class="proj-list-thumb" src="${proj.thumb}" alt="${name}">`
+      : `<div class="proj-list-thumb proj-list-thumb-icon">🔪</div>`;
     card.innerHTML = `
-      <img class="proj-list-thumb" src="${proj.thumb}" alt="${name}">
+      ${thumbHtml}
       <div class="proj-list-info">
         <div class="proj-list-name">${name}</div>
         <div class="proj-list-desc">${desc}</div>
@@ -823,8 +925,11 @@ function openProject(proj) {
   modalBody.scrollTop = 0;
   const hasImages = proj.images && proj.images.length > 0;
   const hasVideos = proj.videos && proj.videos.length > 0;
+  const heroHtml = proj.thumb
+    ? `<div class="proj-detail-hero"><img src="${proj.thumb}" alt="${name}"></div>`
+    : `<div class="proj-detail-hero proj-detail-hero-icon">🔪</div>`;
   let html = `
-    <div class="proj-detail-hero"><img src="${proj.thumb}" alt="${name}"></div>
+    ${heroHtml}
     <div class="proj-detail-info">
       <div class="proj-detail-desc">${desc}</div>
       <div class="proj-detail-meta">
@@ -838,6 +943,12 @@ function openProject(proj) {
       <a class="btn-artstation" href="${proj.artstation}" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 17.723l2.027 3.505h.001a2.424 2.424 0 0 0 2.164 1.333h13.457l-2.792-4.838H0zm24 .025c0-.484-.143-.935-.388-1.314L15.728 2.728a2.424 2.424 0 0 0-2.164-1.333H9.419L21.598 22.54l1.92-3.325c.378-.637.482-.919.482-1.467zm-11.129-3.462L7.428 4.858l-5.444 9.428h10.887z"/></svg>
         ${lang==='en'?'View on ArtStation →':'Ver no ArtStation →'}
+      </a>
+    </div>` : ''}
+    ${proj.link ? `
+    <div style="max-width:900px;margin:0 auto 1.5rem;">
+      <a class="btn-artstation" href="${proj.link}" target="_blank" rel="noopener">
+        ${lang==='en' ? (proj.linkLabelEn || proj.linkLabel || 'View project →') : (proj.linkLabel || 'Ver projeto →')}
       </a>
     </div>` : ''}`;
   if (hasImages) {
@@ -861,7 +972,7 @@ function openProject(proj) {
 modalBack.addEventListener('click', showList);
 document.getElementById('modalClose').addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-document.querySelectorAll('.project-card[data-cat]').forEach(card => {
+document.querySelectorAll('.category-card[data-cat]').forEach(card => {
   card.addEventListener('click', () => openModal(card.dataset.cat));
 });
 
