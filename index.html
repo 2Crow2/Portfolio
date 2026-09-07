@@ -268,6 +268,9 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
 .proj-list-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(214,0,0,0.18);border-color:rgba(214,0,0,0.25);}
 .proj-list-thumb{width:100%;aspect-ratio:16/9;object-fit:contain;background:radial-gradient(ellipse at center,#120505 0%,#080808 70%);padding:1.2rem;filter:drop-shadow(0 0 20px rgba(214,0,0,0.08));transition:transform .4s;display:block;}
 .proj-list-thumb-icon{display:flex;align-items:center;justify-content:center;font-size:2.6rem;filter:drop-shadow(0 0 20px rgba(214,0,0,0.35));}
+.proj-list-thumb-video{position:relative;padding:0;overflow:hidden;}
+.proj-list-thumb-video img{width:100%;height:100%;object-fit:cover;display:block;}
+.proj-list-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(214,0,0,0.9);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 24px rgba(214,0,0,0.5);}
 .proj-list-card:hover .proj-list-thumb{transform:scale(1.04);}
 .proj-list-info{padding:1.2rem 1.4rem 1.4rem;}
 .proj-list-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.35rem;}
@@ -280,6 +283,8 @@ footer{text-align:center;padding:2.5rem;background:var(--bg2);border-top:1px sol
 .proj-detail.show{display:block;}
 .proj-detail-hero{width:100%;max-width:900px;margin:0 auto 2.5rem;border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);}
 .proj-detail-hero img{width:100%;display:block;object-fit:contain;background:radial-gradient(ellipse at center,#120505 0%,#080808 70%);padding:2rem;}
+.proj-detail-hero-video{position:relative;padding-bottom:56.25%;height:0;background:#000;}
+.proj-detail-hero-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 .proj-detail-hero-icon{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:4.5rem;background:radial-gradient(ellipse at center,#150505 0%,#080808 75%);filter:drop-shadow(0 0 24px rgba(214,0,0,0.4));}
 .proj-detail-info{max-width:900px;margin:0 auto 2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;}
 .proj-detail-desc{color:var(--light);line-height:1.8;font-size:.95rem;}
@@ -759,15 +764,14 @@ const CATEGORIES = {
     title:'Multimedia', sub:'Motion · Video · 3D',
     titleEn:'Multimedia', subEn:'Motion · Video · 3D',
     projects:[
-      { thumb:'multimedia.jpg', name:'Projeto Multimédia — Realidade Aumentada', nameEn:'Multimedia Project — Augmented Reality',
+      { name:'Projeto Multimédia — Realidade Aumentada', nameEn:'Multimedia Project — Augmented Reality',
         desc:'Projeto interativo com realidade aumentada, motion graphics e vídeo. Desenvolvido como projeto de destaque académico.',
         descEn:'Interactive project with augmented reality, motion graphics and video. Developed as an academic highlight project.',
         tags:['After Effects','Premiere','Motion','AR'], year:'2023', client:'Projeto académico',
         artstation:'https://pedrofonseca9.artstation.com',
-        images:[{src:'multimedia.jpg',label:'Frame principal'}],
-        videos:[
-          // { src:'multimedia_demo.mp4', label:'Demo completo' }
-        ]
+        youtube:'65BpLTb8eeI',
+        images:[],
+        videos:[]
       },
     ]
   },
@@ -897,7 +901,9 @@ function showList() {
     card.className = 'proj-list-card';
     const name = lang === 'en' ? (proj.nameEn || proj.name) : proj.name;
     const desc = lang === 'en' ? (proj.descEn || proj.desc) : proj.desc;
-    const thumbHtml = proj.thumb
+    const thumbHtml = proj.youtube
+      ? `<div class="proj-list-thumb proj-list-thumb-video"><img src="https://img.youtube.com/vi/${proj.youtube}/hqdefault.jpg" alt="${name}"><div class="proj-list-play">▶</div></div>`
+      : proj.thumb
       ? `<img class="proj-list-thumb" src="${proj.thumb}" alt="${name}">`
       : `<div class="proj-list-thumb proj-list-thumb-icon">🔪</div>`;
     card.innerHTML = `
@@ -925,7 +931,9 @@ function openProject(proj) {
   modalBody.scrollTop = 0;
   const hasImages = proj.images && proj.images.length > 0;
   const hasVideos = proj.videos && proj.videos.length > 0;
-  const heroHtml = proj.thumb
+  const heroHtml = proj.youtube
+    ? `<div class="proj-detail-hero proj-detail-hero-video"><iframe src="https://www.youtube.com/embed/${proj.youtube}" title="${name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+    : proj.thumb
     ? `<div class="proj-detail-hero"><img src="${proj.thumb}" alt="${name}"></div>`
     : `<div class="proj-detail-hero proj-detail-hero-icon">🔪</div>`;
   let html = `
